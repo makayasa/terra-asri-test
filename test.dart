@@ -1,4 +1,5 @@
 void main(args) {
+  //* ini untuk bagian palindrom
   const words = [
     'mAlAyAlaM',
     'A man, a plan, a canal: Panama',
@@ -8,16 +9,19 @@ void main(args) {
     'Dr Awkward & Olson in Oslo',
   ];
   for (var word in words) {
-    // final ispalindrom2 = palindrom2('');
     print(isPalindrom(word));
     print(isPalindrom2(word));
   }
+
+  //* ini untuk bagian emoji decode
   decodeEmoji("I'm feeling 🤔 about the upcoming ✈️ trip. Will we see ️🗺 landmarks?");
   decodeEmoji('🥷🏼! 🎊 for the 🥷🏼 birthday surprise! ☄️ to the party place!');
 
+  //* ini untuk bagian diagonalsum
   final res = calculateDiagonalSum(211);
   print(res);
 
+  //* ini untuk selfnumber. ada 2 jenis. Pakai Set dan Map
   calcSelfNumber();
   findSelfNumbersSum();
 }
@@ -69,8 +73,6 @@ bool isPalindrom(String word) {
   final temp = word.split('');
   final reversed = temp.reversed.toList().join();
   return reversed == word;
-
-  return true;
 }
 
 bool isPalindrom2(String word) {
@@ -86,6 +88,8 @@ bool isPalindrom2(String word) {
   return true;
 }
 
+
+
 int d(int number) {
   var temp = number;
   String sNumber = number.toString();
@@ -100,7 +104,6 @@ void calcSelfNumber() {
   final stopwatch = Stopwatch()..start();
   const limit = 100000;
   Map<String, List<int>> generators = {};
-
   for (var i = 1; i < limit; i++) {
     final int gen = d(i);
     if (!generators.containsKey('$gen')) {
@@ -174,7 +177,6 @@ String decodeEmoji(String word) {
   };
   final splitted = word.split(' ');
   var temp = '';
-
   for (var e in splitted) {
     final s = e.split('');
     var indexSpecialCharacter = -1;
