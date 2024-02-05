@@ -10,18 +10,10 @@ void main(args) {
   for (var word in words) {
     // final ispalindrom2 = palindrom2('');
     print(isPalindrom(word));
+    print(isPalindrom2(word));
   }
-
-  // final ispalindrom = isPalindrom('hello world');
-  // final ispalindrom = isPalindrom('racecar');
-  // print(ispalindrom);
-  // print(ispalindrom2);
-
-  // decodeEmoji('🥷🏼');
   decodeEmoji("I'm feeling 🤔 about the upcoming ✈️ trip. Will we see ️🗺 landmarks?");
-  // print('test');
-  // spiralGrid();
-  // decodeEmoji('🥷🏼! 🎊 for the 🥷🏼 birthday surprise! ☄️ to the party place!');
+  decodeEmoji('🥷🏼! 🎊 for the 🥷🏼 birthday surprise! ☄️ to the party place!');
 
   final res = calculateDiagonalSum(211);
   print(res);
@@ -81,7 +73,7 @@ bool isPalindrom(String word) {
   return true;
 }
 
-bool palindrom2(String word) {
+bool isPalindrom2(String word) {
   RegExp specialCharactersRegex = RegExp(r'[^a-zA-Z0-9]');
 
   word = word.replaceAll(specialCharactersRegex, '').toLowerCase();
